@@ -1,0 +1,18 @@
+      <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#">SampleApp</a>
+          <ul class="nav">
+            <li <%= "class=active" if @title == "Home" %> ><%= link_to "Home", '#' %></li>
+            <li ><%= link_to "Help", '#' %></li>
+            <li ><%= link_to "Sign in", '#' %></li>
+          </ul>
+          <form action="" class="pull-right">
+            <input class="input-small" type="text" placeholder="Username">
+
+            <input class="input-small" type="password" placeholder="Password">
+            <button class="btn" type="submit">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
