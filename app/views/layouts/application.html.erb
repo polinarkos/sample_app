@@ -14,11 +14,11 @@
       <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="#">Sample App</a>
+          <a class="brand" href="#">SampleApp</a>
           <ul class="nav">
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li <%= "class='active'" if @title == "Home" %> ><%= link_to "Home", '#' %></li>
+            <li ><%= link_to "Help", '#' %></li>
+            <li ><%= link_to "Sign in", '#' %></li>
           </ul>
           <form action="" class="pull-right">
             <input class="input-small" type="text" placeholder="Username">
