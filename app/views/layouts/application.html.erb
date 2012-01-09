@@ -17,9 +17,11 @@
 
   <div class="container">
     <div class="content">
+  <% if @title != "Home" then%>
       <div class="page-header">
-          <h1><%= @title %><small>Supporting text or tagline</small></h1>
+          <h1><%= @title %><small><%= @tagline %></small></h1>
       </div>
+  <% end %>
       
       <%=  yield %>
     </div>
