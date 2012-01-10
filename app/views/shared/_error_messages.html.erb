@@ -1,0 +1,14 @@
+<% if @user.errors.any? %>
+
+<div class="alert-message warning">
+<p><strong>Oh noes!</strong> <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved!</p>
+</div>
+
+  <% @user.errors.full_messages.each do |message| %>
+    <div class="alert-message error">
+     <p><strong> <%= message %> </strong></p>
+    </div>
+  <% end %>
+
+
+<% end %>

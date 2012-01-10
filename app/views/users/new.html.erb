@@ -3,6 +3,7 @@
 </div>
 
 <%= form_for(@user, :html => { :class => "form-stacked"} ) do |f| %>
+<%= render 'shared/error_messages' %>
 <div class="clearfix">
   <%= f.label :name %> 
   <div class="input">
@@ -30,7 +31,7 @@
 <div class="clearfix">
 <div class="actions">
   <%= f.submit "Sign up", :class => "btn primary" %>
-  <%= submit_tag("Cancel", { :name => 'reset', :class => "btn", :id => 'reset_button', :type => "reset" }) %>
+  <%= link_to "Reset", new_user_path,  :class => "btn" %>
 </div>
 </div>
 

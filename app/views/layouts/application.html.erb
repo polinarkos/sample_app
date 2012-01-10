@@ -16,13 +16,16 @@
 
 
   <div class="container">
-    <div class="content">    
-      <%=  yield %>
+      <% flash.each do |key, value| %>
+        <div class="flash alert-message <%= key %>"> <%= value %> </div>
+      <% end %>
+    <div class="content">
+
+     <%=  yield %>
+
     </div>
 
   <%= render 'layouts/footer' %>
-
-
 
   </div> <!-- / container -->
 
