@@ -116,12 +116,41 @@ describe User do
     end
 
 
+    it "should set the encrupted password attribute" do
+      @user.encrypted_password.should_not be_blank
+    end
 
+    it "should have a salt" do
+      @user.should respond_to(:salt)
+    end
 
+    describe "has_password? method" do
+      it "should exist" do  
+        @user.should respond_to(:has_password?)
+      end
+      it "should return true if the passes match" do
+        @user.has_password?(@attr[:password]).should be_true
+      end
+      it "should return false otherwise" do
+        @user.has_password?("invalkd").should be_false
+      end
+    end
+
+    describe "authenticate method" do
+      it "should exist" do
+        User.should respond_to(:authenticate)
+      end
+      it "shoudl return nil on email pasword mismatch" do 
+        User.authenticate(@attr[:email], "wrongpass").should be_nil
+      end
+      it "should reutnr nil for an emai lwith no user" do
+        User.authenticate("kakaka@lol.fout", @attr[:password]).should be_nil
+      end
+      it"shoudl return the user on email/pass match" do
+        User.authenticate(@attr[:email], @attr[:password]).should == @user
+      end
+    end
   end
-
-
-
 end
 
 # == Schema Information
