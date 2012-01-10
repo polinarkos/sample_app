@@ -13,6 +13,7 @@ group :production do
 end
 
 group :test do
+  gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'webrat', '0.7.1'
 end
