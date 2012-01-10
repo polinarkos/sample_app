@@ -17,9 +17,9 @@
 
   <div class="container">
     <div class="content">
-  <% if @title != "Home" && !@user then%>
+  <% if @title != "Home" then%>
       <div class="page-header">
-          <h1><%= @title %><small><%= @tagline %></small></h1>
+          <h1><%= @title if !@user %><small><%= @tagline if !@user %></small></h1>
       </div>
   <% end %>
       

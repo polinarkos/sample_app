@@ -33,6 +33,12 @@ render_views
       response.should have_selector('h1>img', :class => "gravatar")      
     end
 
+    it "should have the right url" do
+      get :show, :id => @user
+      response.should have_selector('dd>a', :content => user_path(@user),
+                                            :hraf => user_path(@user))
+    end
+
   end
     
 
