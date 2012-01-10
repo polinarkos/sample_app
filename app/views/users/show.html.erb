@@ -1,1 +1,13 @@
-<%=  @user.name  %>, <%= @user.email %>
+<div class="row">
+  <div class="span10">
+    <h1> 
+    <%= gravatar_for @user, :size => 30 %>
+    <%= @user.name %></h1>
+  </div>
+  <div class="span4">
+    <h3>Secondary content</h3>
+  </div>
+</div>
+
+
+

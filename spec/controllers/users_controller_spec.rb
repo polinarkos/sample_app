@@ -18,6 +18,20 @@ render_views
       assigns(:user).should == @user 
       #goes up into the controller to instance var @user 
     end
+    it "should have the right title" do
+      get :show, :id => @user
+      response.should have_selector("title", 
+                                    :content => @user.name)
+    end
+    it "should have the right h1" do
+      get :show, :id => @user
+      response.should have_selector('h1', :content => @user.name)
+    end
+
+    it "it should have a gravatar" do
+      get :show, :id => @user
+      response.should have_selector('h1>img', :class => "gravatar")      
+    end
 
   end
     

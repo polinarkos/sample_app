@@ -17,7 +17,7 @@
 
   <div class="container">
     <div class="content">
-  <% if @title != "Home" then%>
+  <% if @title != "Home" && !@user then%>
       <div class="page-header">
           <h1><%= @title %><small><%= @tagline %></small></h1>
       </div>
@@ -28,9 +28,12 @@
 
   <%= render 'layouts/footer' %>
 
-  <%= debug(params) if Rails.env.development? %>
+
 
   </div> <!-- / container -->
+
+  <%= debug(params) if Rails.env.development? %>
+  <%= debug(@user) if Rails.env.development? %>
 
 
 </body>

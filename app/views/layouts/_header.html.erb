@@ -5,7 +5,9 @@
     <ul class="nav">
       <li <%= "class=active" if @title == "Home" %> ><%= link_to "Home", root_path %></li>
       <li <%= "class=active" if @title == "Help" %> ><%= link_to "Help", help_path %></li>
-      <li ><%= link_to "Sign in", '#' %></li>
+      <li <%= "class=active" if @title == "About" %> ><%= link_to "About", about_path %></li>
+      <li <%= "class=active" if @title == "Contact" %> ><%= link_to "Contact", contact_path %></li>
+      <li><%= link_to "Sign in", '#' %></li>
     </ul>
     <form action="" class="pull-right">
       <input class="input-small" type="text" placeholder="Username">
