@@ -36,7 +36,7 @@ render_views
     it "should have the right url" do
       get :show, :id => @user
       response.should have_selector('dd>a', :content => user_path(@user),
-                                            :hraf => user_path(@user))
+                                            :href => user_path(@user))
     end
 
   end
