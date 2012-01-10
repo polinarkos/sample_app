@@ -16,13 +16,7 @@
 
 
   <div class="container">
-    <div class="content">
-  <% if @title != "Home" then%>
-      <div class="page-header">
-          <h1><%= @title if !@user %><small><%= @tagline if !@user %></small></h1>
-      </div>
-  <% end %>
-      
+    <div class="content">    
       <%=  yield %>
     </div>
 

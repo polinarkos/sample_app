@@ -1,2 +1,39 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="page-header">
+<h1><%= @title %><small><%= @tagline %></small></h1>
+</div>
+
+<%= form_for(@user, :html => { :class => "form-stacked"} ) do |f| %>
+<div class="clearfix">
+  <%= f.label :name %> 
+  <div class="input">
+  <%= f.text_field :name %>
+  </div>
+</div>
+<div class="clearfix">
+  <%= f.label :email %> 
+  <div class="input">
+  <%= f.text_field :email %>
+  </div>
+</div>
+<div class="clearfix">
+  <%= f.label :password %> 
+  <div class="input">
+  <%= f.password_field :password %>
+  </div>
+</div>
+<div class="clearfix">
+  <%= f.label :password_confirmation, "Confirmation" %> 
+  <div class="input">
+  <%= f.password_field :password_confirmation %>
+  </div>
+</div>
+<div class="clearfix">
+<div class="actions">
+  <%= f.submit "Sign up", :class => "btn primary" %>
+  <%= submit_tag("Cancel", { :name => 'reset', :class => "btn", :id => 'reset_button', :type => "reset" }) %>
+</div>
+</div>
+
+
+
+<% end %>
