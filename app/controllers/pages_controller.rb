@@ -16,6 +16,6 @@ class PagesController < ApplicationController
   
   def help
     @title = "Help"
-    @tagline = "Let us help you"
+    @tagline = ""
   end
 end
