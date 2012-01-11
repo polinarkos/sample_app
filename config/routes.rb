@@ -1,11 +1,15 @@
 SampleApp::Application.routes.draw do
 
+  resources :sessions, :only => [:new, :create, :destroy]
   resources :users 
-
+  
+  match '/signout' => 'sessions#destroy'
+  match '/signin' => 'sessions#new'
   match '/signup' => 'users#new'
   match '/contact' => 'pages#contact'
   match '/about' => 'pages#about'
   match '/help' => 'pages#help'
+
   root :to => 'pages#home'
  
 
