@@ -1,14 +1,14 @@
 <div class="topbar">
 <div class="fill">
   <div class="container">
-    <%= link_to "muug.ath.cx", root_path, :class => "brand" %>
-    <ul class="nav">
-      <li <%= "class=active" if @title == "Home" %> ><%= link_to "Home", root_path %></li>
-      <li <%= "class=active" if @title == "Help" %> ><%= link_to "Help", help_path %></li>
-      <li <%= "class=active" if @title == "About" %> ><%= link_to "About", about_path %></li>
-      <li <%= "class=active" if @title == "Contact" %> ><%= link_to "Contact", contact_path %></li>
-      <li><%= link_to "Sign in", '#' %></li>
-    </ul>
+  <%= link_to "muug.ath.cx", root_path, :class => "brand" %>
+  <ul class="nav">
+  <li <%= "class=active" if @title == "Home" %> ><%= link_to "Home", root_path %></li>
+  <li <%= "class=active" if @title == "Help" %> ><%= link_to "Help", help_path %></li>
+  <li <%= "class=active" if @title == "About" %> ><%= link_to "About", about_path %></li>
+  <li <%= "class=active" if @title == "Contact" %> ><%= link_to "Contact", contact_path %></li>
+  <li <%= "class=active" if @title == "Sign in" %> ><%= link_to "Sign in", signin_path %></li>
+  </ul>
     <form action="" class="pull-right">
       <input class="input-small" type="text" placeholder="Username">
 
@@ -18,3 +18,4 @@
   </div>
 </div>
 </div>
+
