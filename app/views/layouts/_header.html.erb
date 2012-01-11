@@ -7,14 +7,13 @@
   <li <%= "class=active" if @title == "Help" %> ><%= link_to "Help", help_path %></li>
   <li <%= "class=active" if @title == "About" %> ><%= link_to "About", about_path %></li>
   <li <%= "class=active" if @title == "Contact" %> ><%= link_to "Contact", contact_path %></li>
+  <% if signed_in? %>
+  <li><%= link_to "Profile", current_user %></li>
+  <li><%= link_to "Sign out", signout_path %></li>
+  <% else %>
   <li <%= "class=active" if @title == "Sign in" %> ><%= link_to "Sign in", signin_path %></li>
+  <% end %>
   </ul>
-    <form action="" class="pull-right">
-      <input class="input-small" type="text" placeholder="Username">
-
-      <input class="input-small" type="password" placeholder="Password">
-      <button class="btn" type="submit">Sign in</button>
-    </form>
   </div>
 </div>
 </div>
